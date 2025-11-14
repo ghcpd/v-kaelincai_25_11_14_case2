@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project B – Refreshed Task List</title>
+  <link rel="stylesheet" href="styles.improved.css" />
+</head>
+<body>
+  <header class="app-header clean" role="banner">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">✅</span>
+      <div>
+        <p class="eyebrow">Operations Program</p>
+        <h1>Task Review Queue</h1>
+      </div>
+    </div>
+    <nav aria-label="Primary actions" class="primary-actions">
+      <button class="btn tertiary" aria-label="Open automation panel">Automation</button>
+      <button class="btn secondary" aria-label="Open filters">Filters</button>
+      <button class="btn primary" aria-label="Add a new task">Add task</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="task-board" class="task-board refreshed" aria-live="polite">
+      <!-- cards injected -->
+    </section>
+  </main>
+
+  <template id="task-card-template">
+    <article class="task-card" tabindex="0">
+      <div class="task-icon" aria-hidden="true"></div>
+      <div class="task-headings">
+        <p class="task-status"></p>
+        <h2 class="task-title"></h2>
+      </div>
+      <p class="task-summary"></p>
+      <ul class="meta-list"></ul>
+      <div class="task-actions" role="group" aria-label="Task actions"></div>
+    </article>
+  </template>
+
+  <script src="scripts.improved.js" type="module"></script>
+</body>
+</html>

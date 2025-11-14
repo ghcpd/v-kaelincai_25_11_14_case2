@@ -1,0 +1,49 @@
+﻿{
+  "generated_by": "run_all.sh",
+  "summary": {
+    "pre_pass": 1,
+    "post_pass": 5
+  },
+  "comparisons": [
+    {
+      "test_id": "baseline_visual",
+      "pre_status": "passed",
+      "post_status": "passed"
+    },
+    {
+      "test_id": "card_spacing_hierarchy",
+      "pre_status": "failed",
+      "post_status": "passed",
+      "measurements": {
+        "padding_px": 14,
+        "title_font_px": 5,
+        "meta_font_weight": -200
+      }
+    },
+    {
+      "test_id": "button_hover_feedback",
+      "pre_status": "failed",
+      "post_status": "passed",
+      "measurements": {
+        "shadow_strength": 8
+      }
+    },
+    {
+      "test_id": "iconography_alignment",
+      "pre_status": "failed",
+      "post_status": "passed",
+      "measurements": {
+        "margin_right": 12
+      }
+    },
+    {
+      "test_id": "accessibility_contrast_focus",
+      "pre_status": "failed",
+      "post_status": "passed",
+      "measurements": {
+        "contrast_ratio": -0.7,
+        "axe_issues": -9
+      }
+    }
+  ]
+}

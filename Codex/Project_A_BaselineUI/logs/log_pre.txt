@@ -1,0 +1,6 @@
+﻿Test run @ 2025-11-14T13:56:00Z
+[pre] Captured pre UI screenshot
+[pre] Card spacing padding=10 title=15 meta_weight=600
+[pre] Button hover bg=#d9534f shadow=0 cursor=default
+[pre] Icon sizes w1=48 h1=48 w2=48 h2=48 marginRight=0
+[pre] a11y ratio=5.9 outline=none issues=9 active=BUTTON

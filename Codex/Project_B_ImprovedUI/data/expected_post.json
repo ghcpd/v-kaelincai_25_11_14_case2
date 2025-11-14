@@ -1,0 +1,15 @@
+﻿{
+  "card_padding_px_min": 18,
+  "card_padding_px_target": 20,
+  "title_font_size_px": 20,
+  "subtitle_font_weight": 400,
+  "button_primary_color": "#0d47a1",
+  "button_hover_color": "#1565c0",
+  "button_border_radius": 10,
+  "icon_size_px": 32,
+  "icon_margin_right_px": 12,
+  "card_gap_px": 16,
+  "contrast_ratio_body": 4.8,
+  "focus_outline": "2px solid #0d47a1",
+  "axe_violations_expected": 0
+}

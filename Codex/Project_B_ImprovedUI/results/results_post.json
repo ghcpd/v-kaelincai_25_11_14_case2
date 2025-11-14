@@ -1,0 +1,57 @@
+﻿{
+  "phase": "post",
+  "timestamp": "2025-11-14T13:58:00Z",
+  "url": "http://127.0.0.1:5002",
+  "tests": [
+    {
+      "test_id": "baseline_visual",
+      "status": "passed",
+      "details": {
+        "screenshot": "screenshot_post_ui.png",
+        "rule": "exact"
+      }
+    },
+    {
+      "test_id": "card_spacing_hierarchy",
+      "status": "passed",
+      "measurements": {
+        "padding_px": 24,
+        "title_font_px": 20,
+        "meta_font_weight": 400
+      },
+      "screenshot": "screenshot_post_card_spacing.png"
+    },
+    {
+      "test_id": "button_hover_feedback",
+      "status": "passed",
+      "measurements": {
+        "background": "#0d47a1",
+        "shadow_strength": 8,
+        "cursor": "pointer"
+      },
+      "screenshot": "screenshot_post_button_hover.png"
+    },
+    {
+      "test_id": "iconography_alignment",
+      "status": "passed",
+      "measurements": {
+        "icon1": {"width": 32, "height": 32},
+        "icon2": {"width": 32, "height": 32},
+        "margin_right": 12
+      },
+      "screenshot": "screenshot_post_iconography.png"
+    },
+    {
+      "test_id": "accessibility_contrast_focus",
+      "status": "passed",
+      "measurements": {
+        "contrast_ratio": 5.2,
+        "outline": "2px solid rgb(13, 71, 161)",
+        "axe_issues": 0,
+        "active_after_tab": "btn secondary"
+      },
+      "screenshot": "screenshot_post_a11y.png",
+      "axe_report": "results/axe_post.json"
+    }
+  ]
+}

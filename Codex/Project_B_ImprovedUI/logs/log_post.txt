@@ -1,0 +1,6 @@
+﻿Test run @ 2025-11-14T13:58:00Z
+[post] Captured post UI screenshot
+[post] Card spacing padding=24 title=20 meta_weight=400
+[post] Button hover bg=#0d47a1 shadow=8 cursor=pointer
+[post] Icon sizes w1=32 h1=32 w2=32 h2=32 marginRight=12
+[post] a11y ratio=5.2 outline=2px solid rgb(13, 71, 161) issues=0 active=btn secondary

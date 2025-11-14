@@ -1,0 +1,86 @@
+﻿[
+  {
+    "test_id": "baseline_visual",
+    "description": "Capture the full baseline or improved UI for later diffing.",
+    "steps": [
+      {"action": "open", "target": "page", "value": "http://localhost:5001"},
+      {"action": "wait_for", "target": "selector", "value": "#task-board"},
+      {"action": "screenshot", "target": "full-page", "value": "screenshot_${phase}_ui.png"}
+    ],
+    "selector": "body",
+    "expected": {
+      "screenshot": "screenshot_${phase}_ui.png",
+      "rule": "exact"
+    }
+  },
+  {
+    "test_id": "card_spacing_hierarchy",
+    "description": "Validate padding, title size, and subtitle color weight for task cards.",
+    "steps": [
+      {"action": "open", "target": "page", "value": "http://localhost:5001"},
+      {"action": "wait_for", "target": "selector", "value": ".task-card"},
+      {"action": "measure", "target": "selector", "value": ".task-card:first-child", "properties": ["padding", "margin", "box-shadow"]},
+      {"action": "measure", "target": "selector", "value": ".task-card:first-child .task-title", "properties": ["font-size", "font-weight"]},
+      {"action": "measure", "target": "selector", "value": ".task-card:first-child .task-meta", "properties": ["color", "font-weight"]}
+    ],
+    "selector": ".task-card",
+    "expected": {
+      "padding": {"min": 12, "phase": {"post": 18}},
+      "title-font-size": {"min": 16, "phase": {"post": 18}},
+      "meta-font-weight": {"max": 500},
+      "rule": "threshold"
+    },
+    "screenshot": "screenshot_${phase}_card_spacing.png"
+  },
+  {
+    "test_id": "button_hover_feedback",
+    "description": "Primary buttons share the same color palette and hover affordance.",
+    "steps": [
+      {"action": "open", "target": "page", "value": "http://localhost:5001"},
+      {"action": "hover", "target": "selector", "value": ".task-card:first-child .btn-primary"},
+      {"action": "measure", "target": "selector", "value": ".task-card:first-child .btn-primary", "properties": ["background-color", "box-shadow", "cursor"]},
+      {"action": "screenshot", "target": "selector", "value": ".task-card:first-child .btn-primary", "name": "screenshot_${phase}_button_hover.png"}
+    ],
+    "selector": ".btn-primary",
+    "expected": {
+      "background-color": {"baseline": "#d9534f", "post": "#0d47a1"},
+      "hover-shadow": {"min": 6},
+      "cursor": "pointer",
+      "rule": "exact"
+    }
+  },
+  {
+    "test_id": "iconography_alignment",
+    "description": "All task icons align to a consistent size and baseline.",
+    "steps": [
+      {"action": "open", "target": "page", "value": "http://localhost:5001"},
+      {"action": "measure", "target": "selector", "value": ".task-card:first-child .task-icon", "properties": ["width", "height", "margin-right"]},
+      {"action": "measure", "target": "selector", "value": ".task-card:nth-child(2) .task-icon", "properties": ["width", "height"]}
+    ],
+    "selector": ".task-icon",
+    "expected": {
+      "size": {"width": 32, "height-range": [28, 32], "post": 32},
+      "alignment": {"margin-right-min": 8},
+      "rule": "threshold"
+    },
+    "screenshot": "screenshot_${phase}_iconography.png"
+  },
+  {
+    "test_id": "accessibility_contrast_focus",
+    "description": "Body text contrast and keyboard focus order meet WCAG AA.",
+    "steps": [
+      {"action": "open", "target": "page", "value": "http://localhost:5001"},
+      {"action": "run_axe", "target": "document", "value": "axe_results_${phase}.json"},
+      {"action": "measure", "target": "selector", "value": ".task-card:first-child .task-summary", "properties": ["color", "background-color", "outline"]},
+      {"action": "keyboard", "target": "tab", "value": 3}
+    ],
+    "selector": "body",
+    "expected": {
+      "contrast-ratio": {"min": 4.5},
+      "focus-outline": {"required": true},
+      "axe-violations": {"max": 2, "post": 0},
+      "rule": "threshold"
+    },
+    "screenshot": "screenshot_${phase}_a11y.png"
+  }
+]
