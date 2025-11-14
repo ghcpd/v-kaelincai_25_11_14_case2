@@ -1,0 +1,19 @@
+/* Baseline dense layout styles */
+:root{--primary:#0d47a1;--secondary:#e0e0e0;--bg:#ffffff}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#222;margin:0;padding:20px}
+.container{max-width:800px;margin:0 auto}
+h1{font-size:20px;margin:0 0 12px}
+.task-list{display:flex;flex-direction:column;gap:8px}
+.task-card{display:flex;align-items:center;justify-content:space-between;padding:8px;border-radius:4px;background:#fafafa;border:1px solid #eee}
+.task-left{width:36px;text-align:center}
+.icon{font-size:18px}
+.task-main{flex:1;margin:0 8px}
+.task-title{font-size:14px;margin:0}
+.task-meta{font-size:12px;color:#666;margin:2px 0 0}
+.task-actions{display:flex;gap:6px}
+.btn{padding:6px 8px;border-radius:4px;border:0;cursor:pointer}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-secondary{background:#f0f0f0;color:#222}
+.btn:hover{opacity:0.95}
+/* No explicit focus outlines to emulate baseline dense UI */
+.btn:focus{outline:none}
