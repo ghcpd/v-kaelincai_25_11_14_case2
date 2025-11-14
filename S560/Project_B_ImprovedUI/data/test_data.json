@@ -1,0 +1,42 @@
+[
+  {
+    "test_id": "baseline_render",
+    "description": "Capture baseline page and compare full page rendering",
+    "steps": ["start_server", "open_url", "screenshot_full_page"],
+    "selector": "body",
+    "expected": {"screenshot":"screenshot_post_ui.png"},
+    "threshold": 0
+  },
+  {
+    "test_id": "spacing_hierarchy",
+    "description": "Card padding, margin, and typography checks",
+    "steps": ["open_url", "evaluate_styles"],
+    "selector": ".task-card",
+    "expected": {"padding_min": 16, "title_font_size_min": 18, "subtitle_weight":"light"},
+    "threshold": 0
+  },
+  {
+    "test_id": "button_consistency",
+    "description": "Primary buttons have the same color and hover style",
+    "steps": ["open_url", "hover", "evaluate_styles"],
+    "selector": ".task-card .btn-primary",
+    "expected": {"background_color":"#0d47a1", "hover_box_shadow": "rgba(13,71,161,0.18) 0px 6px 18px"},
+    "threshold": 0.05
+  },
+  {
+    "test_id": "icon_consistency",
+    "description": "Icons are the same size and vertically aligned",
+    "steps": ["open_url", "evaluate_styles"],
+    "selector": ".task-card .icon",
+    "expected": {"width": 20, "height": 20, "vertical_align": "middle"},
+    "threshold": 0
+  },
+  {
+    "test_id": "accessibility_checks",
+    "description": "Contrast ratio, focus state, and ARIA attrs",
+    "steps": ["open_url", "run_axe", "keyboard_focus"],
+    "selector": "body",
+    "expected": {"contrast_ratio": 4.5, "has_focus_outline": true, "aria_labels": true},
+    "threshold": 0
+  }
+]

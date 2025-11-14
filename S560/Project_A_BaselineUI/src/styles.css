@@ -1,0 +1,28 @@
+/* Dense baseline UI styles: compact, inconsistent paddings and icon sizes */
+body{font-family: Arial, Helvetica, sans-serif;background:#fff;color:#111}
+main{max-width:900px;margin:20px auto}
+h1{font-size:20px;margin-bottom:12px}
+.task-list{display:flex;flex-direction:column;gap:6px}
+.task-card{display:flex;align-items:center;background:#f8f8f8;border:1px solid #e0e0e0;padding:8px;margin-bottom:6px}
+.task-card .left{width:36px;text-align:center}
+.task-card .icon{font-size:12px;margin-right:8px}
+.task-card .content{flex:1}
+.task-card .title{font-size:14px;font-weight:600}
+.task-card .meta{font-size:12px;color:#666}
+.actions{display:flex;gap:8px}
+.btn-primary{background:#1a73e8;border:none;color:#fff;border-radius:3px;padding:4px 6px;cursor:pointer}
+.btn-primary.green{background:green}
+.btn-primary.red{background:#b71c1c}
+.btn-secondary{background:transparent;border:1px solid #ddd;padding:2px 4px;border-radius:3px}
+.btn-primary.small{padding:3px 6px;font-size:12px}
+.btn-primary.tiny{padding:1px 4px;font-size:11px}
+.btn-secondary.tiny{padding:0 4px;font-size:10px}
+
+/* Inconsistent focus states */
+.btn-primary:focus{outline:none}
+.btn-secondary:focus{outline:2px solid #bde1ff}
+
+/* Overlapping icons and text */
+.task-card .left .icon{width:30px;height:14px}
+
+@media (max-width:640px){.task-card{padding:6px}}
