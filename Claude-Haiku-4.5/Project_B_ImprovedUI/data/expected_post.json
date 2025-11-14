@@ -1,0 +1,39 @@
+{
+  "expected_improvements": {
+    "card_padding": "20px",
+    "card_margin": "16px",
+    "title_font_size": "16px",
+    "title_font_weight": "600",
+    "button_bg_color": "#0D47A1",
+    "button_hover_shadow": "rgba(0,0,0,0.12) 0px 2px 8px",
+    "button_border_radius": "6px",
+    "icon_width": "20px",
+    "icon_height": "20px",
+    "icon_alignment": "center",
+    "status_icon_color": "#4CAF50"
+  },
+  "accessibility_targets": {
+    "contrast_ratios": {
+      "task_title": 4.8,
+      "task_description": 4.6,
+      "btn_primary": 5.2
+    },
+    "focus_outline": "0 0 0 2px rgba(33, 150, 243, 0.2)",
+    "aria_labels": "comprehensive",
+    "keyboard_navigation": "full_support"
+  },
+  "visual_hierarchy": {
+    "typography_scale": {
+      "header": "24px / 600",
+      "task_title": "16px / 600", 
+      "task_description": "14px / 400",
+      "meta_text": "13px / 500"
+    },
+    "spacing_system": {
+      "container_padding": "24px",
+      "card_padding": "20px",
+      "element_gap": "12px",
+      "section_gap": "16px"
+    }
+  }
+}
