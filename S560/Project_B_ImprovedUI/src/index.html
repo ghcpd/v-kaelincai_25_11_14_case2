@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tasks - Improved Card UI</title>
+  <link rel="stylesheet" href="styles.improved.css">
+</head>
+<body>
+  <main>
+    <h1>Tasks</h1>
+    <div class="task-list">
+      <div class="task-card" role="article" aria-label="Fix login bug" tabindex="0">
+        <div class="left">
+          <span class="icon" aria-hidden="true">✓</span>
+        </div>
+        <div class="content">
+          <div class="title">Fix login bug on desktop build</div>
+          <div class="meta">Due Sep 14 — medium</div>
+        </div>
+        <div class="actions">
+          <button class="btn-primary" aria-label="start task">Start</button>
+          <button class="btn-secondary" aria-label="see more options">More</button>
+        </div>
+      </div>
+
+      <div class="task-card" role="article" aria-label="Create onboarding checklist" tabindex="0">
+        <div class="left"><span class="icon">★</span></div>
+        <div class="content">
+          <div class="title">Create new onboarding checklist</div>
+          <div class="meta">Due Nov 1 — design</div>
+        </div>
+        <div class="actions"><button class="btn-primary">Start</button> <button class="btn-secondary">More</button></div>
+      </div>
+
+      <div class="task-card" role="article" aria-label="Update privacy policy" tabindex="0">
+        <div class="left"><span class="icon">⚠</span></div>
+        <div class="content">
+          <div class="title">Update privacy policy verbiage</div>
+          <div class="meta">Due Oct 28 — low priority</div>
+        </div>
+        <div class="actions"><button class="btn-primary">Start</button> <button class="btn-secondary">More</button></div>
+      </div>
+
+      <div class="task-card" role="article" aria-label="Proof release notes" tabindex="0">
+        <div class="left"><span class="icon">✎</span></div>
+        <div class="content">
+          <div class="title">Proof new release notes</div>
+          <div class="meta">Due Oct 9 — content review</div>
+        </div>
+        <div class="actions"><button class="btn-primary">Start</button> <button class="btn-secondary">More</button></div>
+      </div>
+
+      <div class="task-card" role="article" aria-label="Rethink notifications" tabindex="0">
+        <div class="left"><span class="icon">🔔</span></div>
+        <div class="content">
+          <div class="title">Rethink notifications throttling</div>
+          <div class="meta">Due Dec 12 — cross-team</div>
+        </div>
+        <div class="actions"><button class="btn-primary">Start</button> <button class="btn-secondary">More</button></div>
+      </div>
+
+    </div>
+  </main>
+  <script src="scripts.improved.js"></script>
+</body>
+</html>
