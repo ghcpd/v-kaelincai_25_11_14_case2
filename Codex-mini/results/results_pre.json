@@ -1,0 +1,44 @@
+[
+  {
+    "test_id": "baseline_visual",
+    "status": "pass",
+    "screenshots": [
+      "screenshot_pre_ui.png",
+      "screenshot_pre_baseline_visual.png"
+    ],
+    "measurements": {
+      "page_height": 386
+    },
+    "details": "Baseline dense layout captured for reference."
+  },
+  {
+    "test_id": "spacing_hierarchy",
+    "status": "pass",
+    "screenshots": [
+      "screenshot_pre_spacing_hierarchy.png"
+    ],
+    "measurements": {
+      "padding": "8px",
+      "title_font_size": "16px",
+      "subtitle_weight": "400",
+      "button_background": "rgb(248, 248, 248)",
+      "button_border": "1px solid rgb(187, 187, 187)",
+      "button_cursor": "pointer",
+      "hover_box_shadow": "none"
+    },
+    "details": "Measured dense card spacing, meta weight, and button affordances."
+  },
+  {
+    "test_id": "accessibility",
+    "status": "pass",
+    "screenshots": [
+      "screenshot_pre_accessibility.png"
+    ],
+    "measurements": {
+      "violations": 0,
+      "focus_element": "BUTTON",
+      "contrast_issue_count": 0
+    },
+    "details": "Ran axe-core; keyboard focus lands on layout container."
+  }
+]

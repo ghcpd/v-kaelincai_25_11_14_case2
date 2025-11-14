@@ -1,0 +1,47 @@
+[
+  {
+    "test_id": "baseline_visual",
+    "description": "Capture the baseline layout for reference.",
+    "steps": ["open_page:/", "wait:500"],
+    "selector": "body",
+    "action": "screenshot",
+    "expected": {"screenshot": "screenshot_pre_ui.png"},
+    "pass_rule": "exists"
+  },
+  {
+    "test_id": "spacing_hierarchy",
+    "description": "Validate card padding, title font-size, and subtitle weight to reflect a dense layout.",
+    "steps": ["open_page:/", "wait:500"],
+    "selector": ".task-card",
+    "action": "css",
+    "expected": {"padding": "8px", "font-size": "16px", "subtitle-weight": "500"},
+    "pass_rule": "threshold"
+  },
+  {
+    "test_id": "button_consistency",
+    "description": "Buttons should share color and hover state for consistent affordance.",
+    "steps": ["open_page:/", "hover:.action"],
+    "selector": ".action",
+    "action": "css",
+    "expected": {"background-color": "#f8f8f8", "border-color": "#bbb", "hover-box-shadow": "0"},
+    "pass_rule": "exact"
+  },
+  {
+    "test_id": "icon_alignment",
+    "description": "Icons should be same size and vertically aligned with text.",
+    "steps": ["open_page:/", "wait:500"],
+    "selector": ".task-icon",
+    "action": "css",
+    "expected": {"font-size": "24px"},
+    "pass_rule": "exact"
+  },
+  {
+    "test_id": "accessibility",
+    "description": "Verify contrast and focus order for keyboard navigation.",
+    "steps": ["open_page:/", "press:Tab"],
+    "selector": "body",
+    "action": "a11y",
+    "expected": {"contrast": ">=4.5", "focus-visible": "yes"},
+    "pass_rule": "threshold"
+  }
+]

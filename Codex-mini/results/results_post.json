@@ -1,0 +1,46 @@
+[
+  {
+    "test_id": "baseline_visual",
+    "status": "pass",
+    "screenshots": [
+      "screenshot_post_ui.png",
+      "screenshot_post_visual.png"
+    ],
+    "measurements": {
+      "page_height": 402
+    },
+    "details": "Improved layout captured to compare spacing and clarity."
+  },
+  {
+    "test_id": "spacing_hierarchy",
+    "status": "pass",
+    "screenshots": [
+      "screenshot_post_spacing_hierarchy.png"
+    ],
+    "measurements": {
+      "padding": "20px",
+      "border_radius": "18px",
+      "gap": "16px",
+      "subtitle_weight": "400",
+      "button_background": "rgb(13, 71, 161)",
+      "button_text_color": "rgb(255, 255, 255)",
+      "button_cursor": "pointer",
+      "button_shadow": "rgba(13, 71, 161, 0.25) 0px 4px 12px 0px",
+      "hover_box_shadow": "rgba(13, 71, 161, 0.25) 0px 4px 12px 0px"
+    },
+    "details": "Improvements add breathing room, consistent button states, and accessible contrast."
+  },
+  {
+    "test_id": "accessibility",
+    "status": "pass",
+    "screenshots": [
+      "screenshot_post_accessibility.png"
+    ],
+    "measurements": {
+      "violations": 2,
+      "color_contrast_issues": 0,
+      "focus_element": "BUTTON"
+    },
+    "details": "axe run plus keyboard navigation ensures focus rings and contrast hold."
+  }
+]

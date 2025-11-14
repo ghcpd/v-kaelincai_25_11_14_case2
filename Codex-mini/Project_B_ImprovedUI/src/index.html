@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task List - Refined UI</title>
+  <link rel="stylesheet" href="styles.improved.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Sprint Board</p>
+      <h1>Task List</h1>
+    </div>
+    <button class="primary">Quick Add</button>
+  </header>
+  <section class="task-board">
+    <article class="improved-card" tabindex="0">
+      <div class="card-icon">??</div>
+      <div class="card-content">
+        <div class="card-heading">
+          <h2>Deploy analytics backend</h2>
+          <span class="pill blocked">Blocked</span>
+        </div>
+        <p class="meta">Owner: Riley ¡¤ Due: Today</p>
+        <p class="body-text">Waiting on infra review. Ops approval gating merge.</p>
+        <div class="actions">
+          <button class="btn primary">View</button>
+          <button class="btn secondary">Update</button>
+        </div>
+      </div>
+    </article>
+    <article class="improved-card" tabindex="0">
+      <div class="card-icon">??</div>
+      <div class="card-content">
+        <div class="card-heading">
+          <h2>Refine task card spacing</h2>
+          <span class="pill progress">In Progress</span>
+        </div>
+        <p class="meta">Owner: Avery ¡¤ Due: 2d</p>
+        <p class="body-text">Sketches complete; building high-fidelity artifacts.</p>
+        <div class="actions">
+          <button class="btn primary">View</button>
+          <button class="btn secondary">Assign</button>
+        </div>
+      </div>
+    </article>
+    <article class="improved-card" tabindex="0">
+      <div class="card-icon">?</div>
+      <div class="card-content">
+        <div class="card-heading">
+          <h2>QA regression scenarios</h2>
+          <span class="pill ready">Ready</span>
+        </div>
+        <p class="meta">Owner: Jordan ¡¤ Due: Fri</p>
+        <p class="body-text">Regression suites queued and awaiting smoke sign-off.</p>
+        <div class="actions">
+          <button class="btn primary">View</button>
+          <button class="btn secondary">Run</button>
+        </div>
+      </div>
+    </article>
+  </section>
+  <script src="scripts.improved.js"></script>
+</body>
+</html>
