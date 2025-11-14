@@ -1,0 +1,12 @@
+{
+  "spacing_hierarchy": {
+    "padding": ">=20px",
+    "gap": ">=16px",
+    "button_background": "#0d47a1",
+    "btn_text_color": "#ffffff"
+  },
+  "accessibility": {
+    "contrast": ">=4.5",
+    "focus_indicators": "present"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task List - Baseline</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Team Sprint Tasks</h1>
+    <p>Weekly planning board with dense status cards.</p>
+  </header>
+  <main class="task-board">
+    <section class="task-card" data-status="blocked">
+      <div class="task-icon">??</div>
+      <div>
+        <h2>Deploy analytics backend</h2>
+        <p class="meta">Owner: Riley ， Due: Today ， Status: Blocked</p>
+        <div class="details">
+          <p>Waiting on infra review. Need ops approval to merge.</p>
+        </div>
+      </div>
+      <button class="action">View</button>
+      <button class="action">Update</button>
+    </section>
+    <section class="task-card" data-status="in-progress">
+      <div class="task-icon">??</div>
+      <div>
+        <h2>Refine task card spacing</h2>
+        <p class="meta">Owner: Avery ， Due: 2d ， Status: In Progress</p>
+        <div class="details">
+          <p>Sketches complete; building high-fidelity deliverables.</p>
+        </div>
+      </div>
+      <button class="action">View</button>
+      <button class="action">Assign</button>
+    </section>
+    <section class="task-card" data-status="ready">
+      <div class="task-icon">?</div>
+      <div>
+        <h2>QA regression scenarios</h2>
+        <p class="meta">Owner: Jordan ， Due: Fri ， Status: Ready</p>
+        <div class="details">
+          <p>Regression suites are queued. Need smoke approval.</p>
+        </div>
+      </div>
+      <button class="action">View</button>
+      <button class="action">Run</button>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>
