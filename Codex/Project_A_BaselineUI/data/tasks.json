@@ -1,0 +1,32 @@
+﻿[
+  {
+    "id": 1,
+    "title": "Finalize quarterly roadmap",
+    "summary": "Aggregate requests, de-duplicate, prioritize for Q1.",
+    "assignee": "Avery",
+    "status": "Blocked",
+    "due_date": "2025-12-01",
+    "tags": ["Strategy", "Planning"],
+    "icon": "⚠"
+  },
+  {
+    "id": 2,
+    "title": "Refactor notification pipeline",
+    "summary": "Stabilize flaky workers causing alert fatigue.",
+    "assignee": "Kai",
+    "status": "In Progress",
+    "due_date": "2025-11-20",
+    "tags": ["Infra", "Reliability"],
+    "icon": "🔧"
+  },
+  {
+    "id": 3,
+    "title": "Prototype multi-select filters",
+    "summary": "Enable compound filtering to reduce search loops.",
+    "assignee": "Jules",
+    "status": "Ready for Review",
+    "due_date": "2025-11-18",
+    "tags": ["UX", "Experiment"],
+    "icon": "✨"
+  }
+]

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project A – Dense Task List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header noisy">
+    <div class="logo-stack">
+      <span class="logo-icon">⚙</span>
+      <div>
+        <h1>Delivery Control Room</h1>
+        <p class="subtitle">All work items dumped into a single stream</p>
+      </div>
+    </div>
+    <div class="header-buttons">
+      <button class="btn btn-ghost">Bulk Actions</button>
+      <button class="btn btn-primary">Add Task</button>
+      <button class="btn btn-warning">Escalate</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="task-board" class="task-board dense">
+      <!-- Cards injected by scripts.js -->
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
