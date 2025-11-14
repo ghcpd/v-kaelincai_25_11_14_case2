@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Task List - Improved</title>
+  <link rel="stylesheet" href="styles.improved.css">
+</head>
+<body>
+  <main class="container">
+    <h1>My Tasks</h1>
+    <section class="task-list" role="list">
+      <article class="task-card" role="listitem" aria-label="Task: Buy groceries">
+        <div class="task-left" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><!-- bell -->
+            <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2zm6-6V10c0-3.07-1.63-5.64-4.5-6.32V3.5a1.5 1.5 0 0 0-3 0v.18C7.63 4.36 6 6.92 6 10v6l-2 2v1h16v-1l-2-2z"/></svg>
+        </div>
+        <div class="task-main">
+          <h2 class="task-title">Buy groceries</h2>
+          <p class="task-meta">Jan 1 • Grocery list</p>
+        </div>
+        <div class="task-actions">
+          <button class="btn btn-secondary" aria-label="Edit Buy groceries">Edit</button>
+          <button class="btn btn-primary" aria-label="Mark Buy groceries as done">Done</button>
+        </div>
+      </article>
+      <!-- repeat tasks -->
+      <article class="task-card" role="listitem" aria-label="Task: Finish project">
+        <div class="task-left" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM11 11V6h2v5h5v2h-5v5h-2v-5H6v-2z"/></svg>
+        </div>
+        <div class="task-main">
+          <h2 class="task-title">Finish project</h2>
+          <p class="task-meta">Due Jan 3 • High priority</p>
+        </div>
+        <div class="task-actions">
+          <button class="btn btn-secondary" aria-label="Edit Finish project">Edit</button>
+          <button class="btn btn-primary" aria-label="Mark Finish project as done">Done</button>
+        </div>
+      </article>
+      <article class="task-card" role="listitem" aria-label="Task: Call Alice">
+        <div class="task-left" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C9.85 21 3 14.15 3 6a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57.16.41.06.88-.24 1.05l-2.2 2.2z"/></svg>
+        </div>
+        <div class="task-main">
+          <h2 class="task-title">Call Alice</h2>
+          <p class="task-meta">Feb 5 • Remind about meeting</p>
+        </div>
+        <div class="task-actions">
+          <button class="btn btn-secondary" aria-label="Edit Call Alice">Edit</button>
+          <button class="btn btn-primary" aria-label="Mark Call Alice as done">Done</button>
+        </div>
+      </article>
+      <article class="task-card" role="listitem" aria-label="Task: Clean office">
+        <div class="task-left" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M6 2h9l3 5v13a1 1 0 0 1-1 1H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h2z"/></svg>
+        </div>
+        <div class="task-main">
+          <h2 class="task-title">Clean office</h2>
+          <p class="task-meta">Low priority</p>
+        </div>
+        <div class="task-actions">
+          <button class="btn btn-secondary" aria-label="Edit Clean office">Edit</button>
+          <button class="btn btn-primary" aria-label="Mark Clean office as done">Done</button>
+        </div>
+      </article>
+      <article class="task-card" role="listitem" aria-label="Task: Read book">
+        <div class="task-left" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 4H7a2 2 0 0 0-2 2v13a1 1 0 0 0 1.45.89L12 18l5.55 1.89A1 1 0 0 0 19 19V6a2 2 0 0 0-2-2z"/></svg>
+        </div>
+        <div class="task-main">
+          <h2 class="task-title">Read book</h2>
+          <p class="task-meta">Leisure</p>
+        </div>
+        <div class="task-actions">
+          <button class="btn btn-secondary" aria-label="Edit Read book">Edit</button>
+          <button class="btn btn-primary" aria-label="Mark Read book as done">Done</button>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="scripts.improved.js"></script>
+</body>
+</html>

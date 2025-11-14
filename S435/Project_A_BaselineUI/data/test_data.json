@@ -1,0 +1,49 @@
+[
+  {
+    "test_id":"baseline_load",
+    "description":"Load baseline page and capture screenshot",
+    "url":"http://127.0.0.1:8001",
+    "steps":[{"action":"open","selector":"body"}],
+    "screenshot":"screenshot_pre_ui.png",
+    "expected":{"type":"visual","threshold":"exact-or-compare"}
+  },
+  {
+    "test_id":"card_spacing",
+    "description":"Assert card padding >= 16px and title font-size >=16px",
+    "url":"http://127.0.0.1:8001",
+    "steps":[{"action":"query","selector":".task-card"}],
+    "selector":".task-card",
+    "expected":{"padding-left":16,"padding-right":16,"padding-top":16,"padding-bottom":16,"title_font_size":16},
+    "screenshot":"screenshot_pre_card_spacing.png",
+    "pass_rule":"threshold"
+  },
+  {
+    "test_id":"button_consistency",
+    "description":"Primary buttons have same color and hover style",
+    "url":"http://127.0.0.1:8001",
+    "steps":[{"action":"query","selector":".btn-primary"},{"action":"hover","selector":".btn-primary:first-of-type"}],
+    "selector":".btn-primary",
+    "expected":{"background-color":"#0d47a1","hover-box-shadow":"exists","cursor":"pointer"},
+    "screenshot":"screenshot_pre_buttons.png",
+    "pass_rule":"exact-or-threshold"
+  },
+  {
+    "test_id":"iconography_alignment",
+    "description":"Icons are uniform size and aligned",
+    "url":"http://127.0.0.1:8001",
+    "steps":[{"action":"query","selector":".icon"}],
+    "selector":".icon",
+    "expected":{"width":18,"height":18,"aligned_center":true},
+    "screenshot":"screenshot_pre_icons.png",
+    "pass_rule":"threshold"
+  },
+  {
+    "test_id":"accessibility_contrast",
+    "description":"Contrast ratio test & keyboard focus presence",
+    "url":"http://127.0.0.1:8001",
+    "steps":[{"action":"open","selector":"body"}],
+    "expected":{"contrast_ratio":4.5,"focus_outline":false},
+    "screenshot":"screenshot_pre_a11y.png",
+    "pass_rule":"threshold"
+  }
+]

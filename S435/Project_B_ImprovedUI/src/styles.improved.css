@@ -1,0 +1,23 @@
+/* Improved UI: spacing, hierarchy, unified buttons, hover states, icon consistency */
+:root{--primary:#0b63d6;--secondary:#f3f6fb;--muted:#6b7280;--bg:#ffffff;--card-bg:#ffffff}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#111;margin:0;padding:28px}
+.container{max-width:900px;margin:0 auto}
+
+h1{font-size:24px;margin:0 0 18px}
+.task-list{display:flex;flex-direction:column;gap:12px}
+.task-card{display:flex;align-items:center;justify-content:space-between;padding:18px;border-radius:10px;background:var(--card-bg);border:1px solid #e6e9ef;box-shadow:0 1px 3px rgba(16,24,40,0.04)}
+.task-left{width:48px;display:flex;align-items:center;justify-content:center}
+.icon{width:24px;height:24px;fill:#0b63d6}
+.task-main{flex:1;margin:0 12px}
+.task-title{font-size:16px;margin:0 0 6px}
+.task-meta{font-size:13px;color:var(--muted);margin:0}
+.task-actions{display:flex;gap:10px}
+.btn{padding:8px 12px;border-radius:8px;border:1px solid transparent;cursor:pointer;font-weight:600}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary);}
+.btn-primary:hover{filter:brightness(0.95);box-shadow:0 6px 12px rgba(11,99,214,0.12)}
+.btn-secondary{background:#fff;color:var(--muted);border-color:#e6e9ef}
+.btn-secondary:hover{background:#f8fafc}
+.btn:focus{outline:3px solid #b6d4ff;outline-offset:3px}
+
+/* Accessibility improvements */
+[role="list"]{outline-offset:4px}
