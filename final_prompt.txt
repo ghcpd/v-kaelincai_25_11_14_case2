@@ -1,0 +1,83 @@
+Role
+You are a software engineer responsible for implementing and testing the capabilities of AI models on the UI/UX improvement subtype within the Feature & improvement category.
+Your task is to deliver two separate, complete, reproducible projects — before (baseline UI) and after (improved UI) — that implement, validate and produce visual evidence for a task-list UI redesign. Each project must include source assets, automated tests (unit + E2E visual checks), environment setup, one-command execution scripts, logs, screenshots and a final comparison report. All artifacts must be saved locally and runnable without external paid services.
+________________________________________
+Title
+Evaluation of Codex-mini, Haiku4.5, S560, S435 and Codex on Feature & improvement — UI/UX improvement: Task List Visual Redesign
+________________________________________
+Description
+This experiment evaluates an AI model’s ability to propose, implement and validate a UI/UX improvement that converts a dense, visually noisy task-list into a clearer, more readable layout. The canonical change: transform “before” dense task cards (screenshot_pre_ui.png) into “after” refreshed cards with improved spacing, hierarchy, unified buttons, consistent iconography, hover states and accessible contrast (screenshot_post_ui.png). Deliverables must include implementable front-end changes, automated visual checks that confirm the presence of specific design improvements, accessibility checks, and before/after screenshots demonstrating the effect.
+Key evaluation criteria
+• Faithful reproduction of the baseline “before” UI.
+• Clear implementation of the improved visual language (spacing, hierarchy, unified buttons, hover states, icon consistency, whitespace).
+• Automated visual and functional verification (pixel-tolerance screenshots, DOM assertions, CSS property checks).
+• Accessibility checks (contrast ratios, focus states, ARIA attributes).
+• Reproducible environment with one-command test/run scripts and a final compare_report.md embedding before/after images and per-check results.
+________________________________________
+Requirements for the AI Model Output
+1.	Test Scenario & Description
+o	Describe the scenario and what’s being tested: visual clarity, spacing, hierarchy, control affordance (buttons/hover), iconography consistency, and accessibility.
+o	Define expected input/output formats for tests (JSON): test actions (load page, hover button, focus element) and expected state snapshots, e.g. {"test_id":"hover_primary","selector":".task-card .btn-primary","expected":{"background-color":"#0D47A1","box-shadow":"rgba(0,0,0,0.12) 0px 2px 8px"}}.
+o	Acceptance criteria examples: primary buttons share same color and hover style; card padding ≥ 16px; title font-size increased; secondary text lighter weight; icon sizes unified; focus outline present; contrast ratio ≥ 4.5:1 for body text.
+2.	Test Data Generation
+o	Supply at least 5 structured test cases saved as test_data.json covering:
+• Baseline visual check (load baseline page and capture screenshot).
+• Card spacing & hierarchy (padding, margin, title font size, subtitle weight).
+• Button consistency & hover feedback (color, hover state, pointer cursor).
+• Iconography and alignment (uniform sizes, vertical alignment).
+• Accessibility checks (contrast ratios, keyboard focus order, ARIA labels).
+o	For each case include: test id, steps (open page, locate selector, action), expected DOM/CSS assertions, screenshot name, and pass/fail rule (exact/threshold).
+3.	Reproducible Environment
+o	Provide requirements.txt, setup.sh and optionally a Dockerfile to create a consistent environment. Include a lightweight static server (Flask/Node static), Playwright or Selenium, puppeteer/Playwright for visual checks, and axe-core or other a11y tool.
+o	Document how to start baseline and improved apps, run tests, and where artifacts (screenshots/logs/results) are written.
+4.	Test Code
+o	Generate executable test code that:
+a. Starts the static server hosting the UI under test.
+b. Uses Playwright or Selenium to open baseline and improved pages, capture full-page and element screenshots, simulate hover/focus, and collect computed CSS values (padding, font-size, color, box-shadow).
+c. Runs accessibility checks (contrast ratios, ARIA presence, keyboard focus behavior) using axe (or equivalent).
+d. Compares screenshots with a tolerance-based diff and writes results_pre.json / results_post.json with per-check outcomes and measured CSS properties.
+e. Reports pass/fail and writes human-readable logs (log_pre.txt, log_post.txt).
+o	Tests must be runnable via provided run_tests.sh.
+5.	Execution Scripts
+o	Each project must include run_tests.sh to: create venv (or use Docker), start server, run tests, save screenshots and logs, then stop the server.
+o	Provide a top-level run_all.sh that executes Project A tests then Project B, aggregates the result files under results/, computes diffs, and generates compare_report.md. One command should run the full workflow.
+6.	Expected Output
+o	For each test produce:
+• results_pre.json and results_post.json — structured assertions, CSS measurements, a11y findings, screenshot file names.
+• log_pre.txt and log_post.txt — test run logs and any JS console errors captured.
+• Screenshots: screenshot_pre_ui.png (baseline), screenshot_pre_<testid>.png, screenshot_post_ui.png (improved), screenshot_post_<testid>.png, and optional *_diff.png showing visual diffs.
+• compare_report.md — embedded thumbnails (or links) of before/after, per-test pass/fail and measured deltas (padding increase, font-size delta, contrast ratios), and an executive summary describing how the redesign improved scanability and accessibility.
+7.	Documentation / Explanation
+o	Include README.md explaining setup, how to run per-project tests and run_all.sh, where artifacts live, and interpretation guidance.
+o	For each automated check explain what it validates and why it matters (e.g., padding/whitespace improves visual scanning; unified buttons reduce cognitive load; hover states improve affordance; contrast aids readability).
+o	Call out pitfalls and limitations: pixel-perfect diffs are brittle across browsers/resolutions — use tolerance thresholds; font/render differences across OS; responsive breakpoints must be separately validated; accessibility tools flag potential but manual review needed.
+o	Recommend rollout steps: A/B test with a sample of users, telemetry measuring task scan time and click success, accessibility audit by specialists, and gradual roll-out via feature flag.
+________________________________________
+Deliverables (All must be saved as local files and organized into two project folders plus shared artifacts)
+Project A – Baseline UI (Before) — folder name: Project_A_BaselineUI
+• src/ — baseline static frontend: index.html, styles.css (dense layout), scripts.js (any client behavior).
+• server/ — small static server (server_pre.py or serve.sh) to host baseline UI.
+• data/ — test_data.json (≥5 test vectors) and sample task fixtures.
+• tests/ — test_pre_visual.py, test_pre_css_assertions.py, test_pre_a11y.py (Playwright/Selenium + axe).
+• screenshots/ — screenshot_pre_ui.png, screenshot_pre_<testid>.png.
+• logs/ — log_pre.txt.
+• results/ — results_pre.json.
+• requirements.txt, setup.sh, run_tests.sh.
+Project B – Improved UI (After) — folder name: Project_B_ImprovedUI
+• src/ — improved frontend: index.html, styles.improved.css (spacing, hierarchy, unified buttons, hover states, consistent icons), scripts.improved.js.
+• server/ — static server (server_post.py or serve.sh) to host improved UI.
+• data/ — same test_data.json and expected_post.json (expected CSS/property ranges).
+• tests/ — test_post_visual.py, test_post_css_assertions.py, test_post_a11y.py.
+• screenshots/ — screenshot_post_ui.png, screenshot_post_<testid>.png, and *_annotated.png (optional).
+• logs/ — log_post.txt.
+• results/ — results_post.json.
+• requirements.txt, setup.sh, run_tests.sh.
+Shared Artifacts (repo root)
+• test_data.json — canonical set of ≥5 structured tests used by both projects.
+• run_all.sh — master script that runs baseline and improved tests, aggregates results_pre.json / results_post.json, generates visual diffs and compare_report.md.
+• compare_report.md — aggregated per-test comparisons with embedded thumbnails, CSS deltas, a11y summary, and recommendations.
+• results/ — aggregated results and selected screenshots/diffs.
+• README.md — instructions for running tests, interpreting results, and rollout suggestions.
+________________________________________
+Goal
+Produce two fully reproducible project folders demonstrating a measurable UI/UX improvement from a dense, noisy task-list to a clean, readable design. Provide automated visual and accessibility verifications, before/after screenshots (including screenshot_pre_ui.png and screenshot_post_ui.png), logs, machine-readable results, and a compare_report.md that quantifies the improvements and recommends rollout steps.
