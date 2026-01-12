@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List - Baseline</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Task Management System</h1>
+            <div class="header-actions">
+                <button class="btn-secondary">Filter</button>
+                <button class="btn-primary">Add Task</button>
+            </div>
+        </header>
+        
+        <div class="task-list">
+            <div class="task-card" data-priority="high">
+                <div class="task-header">
+                    <span class="task-icon">📋</span>
+                    <h3 class="task-title">Complete quarterly report analysis</h3>
+                    <div class="task-actions">
+                        <button class="btn-sm">Edit</button>
+                        <button class="btn-sm btn-danger">Delete</button>
+                    </div>
+                </div>
+                <p class="task-description">Review Q3 financial data, compile insights, and prepare presentation for stakeholder meeting.</p>
+                <div class="task-meta">
+                    <span class="priority high">High Priority</span>
+                    <span class="due-date">Due: Oct 15</span>
+                    <span class="assignee">John D.</span>
+                    <span class="status-icon">⚠️</span>
+                </div>
+                <div class="task-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <span class="progress-text">65% Complete</span>
+                </div>
+            </div>
+
+            <div class="task-card" data-priority="medium">
+                <div class="task-header">
+                    <span class="task-icon">💼</span>
+                    <h3 class="task-title">Update client database records</h3>
+                    <div class="task-actions">
+                        <button class="btn-sm">Edit</button>
+                        <button class="btn-sm btn-danger">Delete</button>
+                    </div>
+                </div>
+                <p class="task-description">Sync recent customer information changes and verify data accuracy across all platforms.</p>
+                <div class="task-meta">
+                    <span class="priority medium">Medium Priority</span>
+                    <span class="due-date">Due: Oct 20</span>
+                    <span class="assignee">Sarah M.</span>
+                    <span class="status-icon">⏳</span>
+                </div>
+                <div class="task-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%"></div>
+                    </div>
+                    <span class="progress-text">30% Complete</span>
+                </div>
+            </div>
+
+            <div class="task-card" data-priority="low">
+                <div class="task-header">
+                    <span class="task-icon">📊</span>
+                    <h3 class="task-title">Organize team building event</h3>
+                    <div class="task-actions">
+                        <button class="btn-sm">Edit</button>
+                        <button class="btn-sm btn-danger">Delete</button>
+                    </div>
+                </div>
+                <p class="task-description">Plan and coordinate team building activities for the monthly office gathering.</p>
+                <div class="task-meta">
+                    <span class="priority low">Low Priority</span>
+                    <span class="due-date">Due: Oct 30</span>
+                    <span class="assignee">Mike R.</span>
+                    <span class="status-icon">✅</span>
+                </div>
+                <div class="task-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                    <span class="progress-text">90% Complete</span>
+                </div>
+            </div>
+
+            <div class="task-card" data-priority="high">
+                <div class="task-header">
+                    <span class="task-icon">🔧</span>
+                    <h3 class="task-title">Fix production server issues</h3>
+                    <div class="task-actions">
+                        <button class="btn-sm">Edit</button>
+                        <button class="btn-sm btn-danger">Delete</button>
+                    </div>
+                </div>
+                <p class="task-description">Investigate and resolve the recent server downtime incidents affecting customer access.</p>
+                <div class="task-meta">
+                    <span class="priority high">High Priority</span>
+                    <span class="due-date">Due: Oct 12</span>
+                    <span class="assignee">Alex T.</span>
+                    <span class="status-icon">🔥</span>
+                </div>
+                <div class="task-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 15%"></div>
+                    </div>
+                    <span class="progress-text">15% Complete</span>
+                </div>
+            </div>
+
+            <div class="task-card" data-priority="medium">
+                <div class="task-header">
+                    <span class="task-icon">📝</span>
+                    <h3 class="task-title">Write documentation for new API</h3>
+                    <div class="task-actions">
+                        <button class="btn-sm">Edit</button>
+                        <button class="btn-sm btn-danger">Delete</button>
+                    </div>
+                </div>
+                <p class="task-description">Create comprehensive API documentation including examples, error codes, and integration guides.</p>
+                <div class="task-meta">
+                    <span class="priority medium">Medium Priority</span>
+                    <span class="due-date">Due: Oct 25</span>
+                    <span class="assignee">Emma L.</span>
+                    <span class="status-icon">📖</span>
+                </div>
+                <div class="task-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                    <span class="progress-text">45% Complete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

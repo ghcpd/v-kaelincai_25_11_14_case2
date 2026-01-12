@@ -1,0 +1,122 @@
+{
+  "test_cases": [
+    {
+      "test_id": "baseline_visual_check",
+      "description": "Capture full page screenshot for baseline comparison",
+      "steps": [
+        {"action": "navigate", "url": "http://localhost:8080"},
+        {"action": "wait", "duration": 2000},
+        {"action": "screenshot", "name": "screenshot_pre_ui.png"}
+      ],
+      "expected": {
+        "screenshot_exists": true,
+        "page_title": "Task List - Baseline"
+      },
+      "pass_rule": "screenshot captured successfully"
+    },
+    {
+      "test_id": "card_spacing_hierarchy",
+      "description": "Validate card layout, padding, and typography hierarchy",
+      "steps": [
+        {"action": "navigate", "url": "http://localhost:8080"},
+        {"action": "wait", "duration": 2000},
+        {"action": "locate", "selector": ".task-card"},
+        {"action": "get_computed_style", "properties": ["padding", "margin", "border-radius"]},
+        {"action": "locate", "selector": ".task-card .task-title"},
+        {"action": "get_computed_style", "properties": ["font-size", "font-weight", "line-height"]},
+        {"action": "screenshot", "name": "screenshot_pre_spacing.png"}
+      ],
+      "expected": {
+        "card_padding": {"baseline": "8px", "improved": "16px"},
+        "card_margin": {"baseline": "4px", "improved": "8px"},
+        "title_font_size": {"baseline": "14px", "improved": "16px"},
+        "title_font_weight": {"baseline": "normal", "improved": "600"}
+      },
+      "pass_rule": "improved values meet minimum thresholds"
+    },
+    {
+      "test_id": "button_consistency_hover",
+      "description": "Check button styling consistency and hover states",
+      "steps": [
+        {"action": "navigate", "url": "http://localhost:8080"},
+        {"action": "wait", "duration": 2000},
+        {"action": "locate", "selector": ".btn-primary"},
+        {"action": "get_computed_style", "properties": ["background-color", "color", "border-radius", "padding"]},
+        {"action": "hover", "selector": ".btn-primary"},
+        {"action": "wait", "duration": 500},
+        {"action": "get_computed_style", "properties": ["background-color", "box-shadow", "cursor"]},
+        {"action": "screenshot", "name": "screenshot_pre_button_hover.png"}
+      ],
+      "expected": {
+        "button_bg_color": {"baseline": "#007bff", "improved": "#0D47A1"},
+        "button_hover_shadow": {"baseline": "none", "improved": "rgba(0,0,0,0.12) 0px 2px 8px"},
+        "button_cursor": "pointer",
+        "button_border_radius": {"baseline": "3px", "improved": "6px"}
+      },
+      "pass_rule": "all buttons share consistent styling and hover effects"
+    },
+    {
+      "test_id": "iconography_alignment",
+      "description": "Verify icon consistency, sizes, and alignment",
+      "steps": [
+        {"action": "navigate", "url": "http://localhost:8080"},
+        {"action": "wait", "duration": 2000},
+        {"action": "locate", "selector": ".task-icon"},
+        {"action": "get_computed_style", "properties": ["width", "height", "vertical-align"]},
+        {"action": "locate", "selector": ".status-icon"},
+        {"action": "get_computed_style", "properties": ["width", "height", "color"]},
+        {"action": "screenshot", "name": "screenshot_pre_icons.png"}
+      ],
+      "expected": {
+        "icon_width": {"baseline": "varies", "improved": "20px"},
+        "icon_height": {"baseline": "varies", "improved": "20px"},
+        "icon_alignment": "middle",
+        "status_icon_color": {"baseline": "inherit", "improved": "#4CAF50"}
+      },
+      "pass_rule": "all icons have uniform dimensions and proper alignment"
+    },
+    {
+      "test_id": "accessibility_checks",
+      "description": "Validate accessibility features including contrast, focus, and ARIA",
+      "steps": [
+        {"action": "navigate", "url": "http://localhost:8080"},
+        {"action": "wait", "duration": 2000},
+        {"action": "run_axe", "include": ["body"]},
+        {"action": "check_contrast", "selectors": [".task-title", ".task-description", ".btn-primary"]},
+        {"action": "focus", "selector": ".btn-primary"},
+        {"action": "get_computed_style", "properties": ["outline", "box-shadow"]},
+        {"action": "screenshot", "name": "screenshot_pre_a11y.png"}
+      ],
+      "expected": {
+        "contrast_ratios": {
+          "task_title": {"baseline": "3.2", "improved": "4.5"},
+          "task_description": {"baseline": "2.8", "improved": "4.5"},
+          "btn_primary": {"baseline": "4.1", "improved": "4.8"}
+        },
+        "focus_outline": {"baseline": "auto", "improved": "2px solid #2196F3"},
+        "axe_violations": {"baseline": "3-5", "improved": "0-1"}
+      },
+      "pass_rule": "contrast ratios ≥ 4.5:1 for text, visible focus indicators, minimal axe violations"
+    }
+  ],
+  "acceptance_criteria": {
+    "visual_improvements": {
+      "card_padding_min": "16px",
+      "title_font_size_min": "16px",
+      "button_consistency": "all primary buttons share same color scheme",
+      "icon_uniformity": "all icons 20x20px with consistent alignment",
+      "hover_feedback": "visible hover states on interactive elements"
+    },
+    "accessibility_requirements": {
+      "contrast_ratio_min": 4.5,
+      "focus_indicators": "visible outline or box-shadow on focus",
+      "aria_labels": "present on interactive elements",
+      "keyboard_navigation": "full keyboard accessibility"
+    },
+    "performance_thresholds": {
+      "screenshot_diff_tolerance": "5%",
+      "css_value_tolerance": "2px",
+      "color_diff_tolerance": "10"
+    }
+  }
+}

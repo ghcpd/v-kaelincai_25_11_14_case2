@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Complete quarterly report analysis",
+    "description": "Review Q3 financial data, compile insights, and prepare presentation for stakeholder meeting.",
+    "priority": "high",
+    "due_date": "2024-10-15",
+    "assignee": "John D.",
+    "progress": 65,
+    "status": "in_progress"
+  },
+  {
+    "id": 2,
+    "title": "Update client database records",
+    "description": "Sync recent customer information changes and verify data accuracy across all platforms.",
+    "priority": "medium",
+    "due_date": "2024-10-20",
+    "assignee": "Sarah M.",
+    "progress": 30,
+    "status": "in_progress"
+  },
+  {
+    "id": 3,
+    "title": "Organize team building event",
+    "description": "Plan and coordinate team building activities for the monthly office gathering.",
+    "priority": "low",
+    "due_date": "2024-10-30",
+    "assignee": "Mike R.",
+    "progress": 90,
+    "status": "almost_complete"
+  },
+  {
+    "id": 4,
+    "title": "Fix production server issues",
+    "description": "Investigate and resolve the recent server downtime incidents affecting customer access.",
+    "priority": "high",
+    "due_date": "2024-10-12",
+    "assignee": "Alex T.",
+    "progress": 15,
+    "status": "urgent"
+  },
+  {
+    "id": 5,
+    "title": "Write documentation for new API",
+    "description": "Create comprehensive API documentation including examples, error codes, and integration guides.",
+    "priority": "medium",
+    "due_date": "2024-10-25",
+    "assignee": "Emma L.",
+    "progress": 45,
+    "status": "in_progress"
+  }
+]
